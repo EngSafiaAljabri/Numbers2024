@@ -10,14 +10,14 @@
 </head>
 <body>
     <div id="app" class="flex flex-col items-center justify-center h-screen">
-        <h1 class="text-4xl font-bold mb-8">لنلعب سويا لعبة الارقام الممتعه </h1>
+        <h1 >لنلعب سويا لعبة الارقام الممتعه </h1>
         <h4> أختر الرقم واستمتع بعَد التفاح </h4><br>
         <div class="grid grid-cols-5 gap-4">
             <button v-for="(number, index) in ['١', '٢', '٣', '٤', '٥', '٦', '٧', '٨', '٩', '١٠']" :key="index" @click="displayApples(index + 1)" class="btn btn-primary btn-lg">{{ number }}</button>
         </div>
         <div class="mt-8" v-if="showApples">
             <div class="flex flex-wrap justify-center">
-                <img v-for="i in selectedNumber" :key="i" src="img/apple.png" class="w-20 h-20 m-2 animate-bounce">
+                <img v-for="i in selectedNumber" :key="i" src="https://img.freepik.com/free-vector/red-apple-isolated-white-background_1308-81441.jpg?t=st=1726820542~exp=1726824142~hmac=05f84f16e562e27b8e9b7e48fc0f514aeabef96f416e4ed9a197b26fa029d7e0&w=360" class="w-20 h-20 m-2 animate-bounce">
             </div>
         </div>
         <br><br>
