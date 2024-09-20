@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+<html dir='rtl' lang='ar'>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الارقام الممتعه </title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@2.51.6/dist/full.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.min.js"></script>
+</head>
+<body>
+    <div id="app" class="flex flex-col items-center justify-center h-screen">
+        <h1 class="text-4xl font-bold mb-8">لنلعب سويا لعبة الارقام الممتعه </h1>
+        <h4> أختر الرقم واستمتع بعَد التفاح </h4><br>
+        <div class="grid grid-cols-5 gap-4">
+            <button v-for="(number, index) in ['١', '٢', '٣', '٤', '٥', '٦', '٧', '٨', '٩', '١٠']" :key="index" @click="displayApples(index + 1)" class="btn btn-primary btn-lg">{{ number }}</button>
+        </div>
+        <div class="mt-8" v-if="showApples">
+            <div class="flex flex-wrap justify-center">
+                <img v-for="i in selectedNumber" :key="i" src="img/apple.png" class="w-20 h-20 m-2 animate-bounce">
+            </div>
+        </div>
+        <br><br>
+        <h4>أعداد الطالب راشد صقر- الصف الاول 3 </h4>
+        <h4>الأستاذة شمساء المقبالية- مادة الرياضيات </h4>
+        <h4>مدرسة الرخاء لتعليم الاساسي </h4>
+
+    </div>
+
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                selectedNumber: 0,
+                showApples: false
+            },
+            methods: {
+                displayApples(number) {
+                    this.selectedNumber = number;
+                    this.showApples = true;
+                }
+            }
+        });
+    </script>
+</body>
+</html>
